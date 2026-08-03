@@ -1,0 +1,38 @@
+# 🌌 V30 ULTIMATE QUANTUM LEGACY - Robots.txt
+# https://dev-moe-kyawaung.github.io/v30-quantum-legacy/robots.txt
+
+User-agent: *
+Allow: /
+Disallow: /private/
+Disallow: /admin/
+Disallow: /api/
+
+Sitemap: https://dev-moe-kyawaung.github.io/v30-quantum-legacy/sitemap.xml
+Sitemap: https://dev-moe-kyawaung.gitlab.io/v30-quantum-legacy/sitemap.xml
+Sitemap: https://v30-quantum-legacy.pages.dev/sitemap-cloudflare.xml
+
+Crawl-delay: 5
+
+# Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 2
+
+# Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2
+
+# Yandex
+User-agent: YandexBot
+Allow: /
+Crawl-delay: 5
+
+# Block Bad Bots
+User-agent: AhrefsBot
+Disallow: /
+User-agent: SemrushBot
+Disallow: /
+
+# Generated: 2026-01-15
+# Contact: moekyawaung@programmer.net
