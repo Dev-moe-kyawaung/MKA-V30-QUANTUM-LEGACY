@@ -1,0 +1,28 @@
+# 🌌 V30 ULTIMATE QUANTUM LEGACY - Git Ignore
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# Node
+node_modules/
+package-lock.json
+
+# Build
+dist/
+build/
+.cache/
+
+# Environment
+.env
+.env.local
+
+# Logs
+logs/
+*.log
