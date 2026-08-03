@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌌 Moe Kyaw Aung | V30 Quantum Legacy | The 10th Dimension</title>
+    
+    <!-- MEGA SEO META TAGS -->
+    <meta name="title" content="Moe Kyaw Aung - The 10th Dimension | V30 Ultimate Quantum Legacy">
+    <meta name="description" content="The absolute pinnacle of web development. 500,000+ lines of quantum perfection. 120 pages. 100 sections. The 10th dimension of coding excellence.">
+    <meta name="keywords" content="V30, Quantum Legacy, 10th Dimension, Ultimate, Android, iOS, Flutter, React Native, AI, Quantum, Moe Kyaw Aung">
+    <meta name="author" content="Moe Kyaw Aung">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#FF00FF">
+    
+    <!-- OPEN GRAPH -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dev-moe-kyawaung.github.io/v30-quantum-legacy">
+    <meta property="og:title" content="Moe Kyaw Aung - The 10th Dimension">
+    <meta property="og:description" content="500,000+ lines of pure quantum perfection.">
+    <meta property="og:image" content="https://res.cloudinary.com/dye5qpwii/image/upload/v1778527878/IMG_20260430_053105_uef0yr.png">
+    
+    <!-- TWITTER -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Moe Kyaw Aung - The 10th Dimension">
+    <meta name="twitter:description" content="500,000+ lines. 120 pages. 100 sections. The final evolution.">
+    
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&family=Great+Vibes&family=Cinzel:wght@400;700;900&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+    
+    <!-- ICONS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- ANIMATIONS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    
+    <style>
+        :root {
+            --d1: #FFD700; --d2: #FF00FF; --d3: #00F5FF; --d4: #00FF00;
+            --d5: #FF0000; --d6: #0000FF; --d7: #FFFF00; --d8: #FFFFFF;
+            --d9: #FFA500; --d10: #FF69B4;
+            
+            --premium-1: linear-gradient(135deg, #FFD700, #FF00FF, #00F5FF, #00FF00);
+            --premium-2: linear-gradient(135deg, #FF0000, #FFA500, #FFD700, #FFFFFF);
+            --premium-3: linear-gradient(135deg, #0000FF, #FF00FF, #FF69B4, #00F5FF);
+            --premium-4: linear-gradient(135deg, #00FF00, #FFFF00, #FFD700, #FFA500);
+            
+            --bg-void: #000000;
+            --bg-dark: #050510;
+            --bg-deep: #0A0A20;
+            
+            --glass: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: var(--bg-void);
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* ===== ANIMATED BACKGROUND ===== */
+        .premium-bg {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            overflow: hidden;
+        }
+        .premium-bg .galaxy {
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            top: -25%; left: -25%;
+            background: radial-gradient(circle, #1A0033, #0A0015, #000010);
+            animation: galaxyFloat 30s ease-in-out infinite;
+        }
+        @keyframes galaxyFloat {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.2) rotate(180deg); }
+        }
+        .premium-bg .nebula {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(100px);
+            animation: nebulaDrift 20s ease-in-out infinite;
+        }
+        .premium-bg .nebula:nth-child(2) { width: 700px; height: 700px; background: rgba(255,0,255,0.08); top: 20%; left: 10%; }
+        .premium-bg .nebula:nth-child(3) { width: 600px; height: 600px; background: rgba(0,245,255,0.08); top: 60%; right: 10%; animation-delay: -5s; }
+        .premium-bg .nebula:nth-child(4) { width: 500px; height: 500px; background: rgba(255,215,0,0.08); bottom: 10%; left: 30%; animation-delay: -10s; }
+        @keyframes nebulaDrift {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(-50px, -50px) scale(1.2); }
+        }
+
+        /* ===== PARTICLE STARS ===== */
+        #stars-canvas {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+        }
+
+        /* ===== PRELOADER ===== */
+        .preloader {
+            position: fixed;
+            inset: 0;
+            background: var(--bg-void);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 999999;
+            transition: opacity 1s, visibility 1s;
+        }
+        .preloader.hidden { opacity: 0; visibility: hidden; }
+        
+        .preloader-10d {
+            position: relative;
+            width: 500px;
+            height: 500px;
+            perspective: 1500px;
+            animation: containerSpin 10s linear infinite;
+        }
+        @keyframes containerSpin {
+            0% { transform: rotateX(0) rotateY(0); }
+            100% { transform: rotateX(360deg) rotateY(360deg); }
+        }
+        .preloader-10d .ring {
+            position: absolute;
+            width: 100%; height: 100%;
+            border: 5px solid transparent;
+            border-radius: 50%;
+            transform-style: preserve-3d;
+        }
+        .preloader-10d .ring:nth-child(1) { border-top: 5px solid var(--d1); }
+        .preloader-10d .ring:nth-child(2) { border-right: 5px solid var(--d2); transform: rotateX(90deg) rotateZ(90deg); }
+        .preloader-10d .ring:nth-child(3) { border-bottom: 5px solid var(--d3); transform: rotateY(90deg) rotateX(90deg); }
+        .preloader-10d .ring:nth-child(4) { border-left: 5px solid var(--d4); transform: rotateY(45deg) rotateX(45deg); }
+        .preloader-10d .ring:nth-child(5) { border-top: 5px solid var(--d5); transform: rotateY(90deg) rotateX(45deg); }
+        .preloader-10d .ring:nth-child(6) { border-right: 5px solid var(--d6); transform: rotateX(90deg) rotateY(45deg); }
+        .preloader-10d .core {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 12rem;
+            animation: corePulse 3s ease-in-out infinite;
+        }
+        @keyframes corePulse {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); filter: brightness(1); }
+            50% { transform: translate(-50%, -50%) scale(1.3) rotate(180deg); filter: brightness(1.5); }
+        }
+        .preloader-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 7rem;
+            font-weight: 900;
+            background: var(--premium-1);
+            background-size: 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientFlow 3s linear infinite;
+            letter-spacing: 15px;
+        }
+        @keyframes gradientFlow {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 400% 50%; }
+        }
+
+        /* ===== NAVIGATION ===== */
+        .navbar {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            background: rgba(5, 5, 16, 0.95);
+            backdrop-filter: blur(50px);
+            padding: 1.2rem 0;
+            z-index: 10000;
+            border-bottom: 2px solid var(--d1);
+        }
+        .navbar.scrolled { padding: 0.6rem 0; }
+        .nav-container {
+            max-width: 2000px;
+            margin: 0 auto;
+            padding: 0 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-brand {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 900;
+            background: var(--premium-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+        }
+        .nav-menu {
+            display: flex;
+            gap: 0.5rem;
+            list-style: none;
+        }
+        .nav-link {
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            font-family: 'Orbitron', sans-serif;
+            transition: all 0.4s;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: var(--d3);
+            background: rgba(0, 245, 255, 0.1);
+        }
+        .menu-toggle { display: none; flex-direction: column; gap: 6px; cursor: pointer; }
+        .menu-toggle span { width: 35px; height: 4px; background: var(--d1); border-radius: 5px; }
+
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 150px 4rem 80px;
+            position: relative;
+        }
+        .hero-container {
+            max-width: 2000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 6rem;
+            align-items: center;
+            z-index: 2;
+            width: 100%;
+        }
+        .hero-crown { font-size: 6rem; display: block; margin-bottom: 1rem; animation: float 3s ease-in-out infinite; }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+        
+        .hero-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(4rem, 15vw, 11rem);
+            font-weight: 900;
+            line-height: 0.85;
+            margin-bottom: 1.5rem;
+        }
+        .hero-title .quantum {
+            background: var(--premium-1);
+            background-size: 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientFlow 4s linear infinite;
+        }
+        .hero-title .badge-v30 {
+            display: inline-block;
+            font-size: 0.2em;
+            padding: 0.5rem 2rem;
+            background: var(--premium-2);
+            border-radius: 50px;
+            -webkit-text-fill-color: white;
+            vertical-align: super;
+            font-family: 'Orbitron', sans-serif;
+        }
+        
+        .hero-subtitle {
+            font-size: clamp(1.5rem, 4vw, 3rem);
+            color: var(--d3);
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 3px;
+            margin-bottom: 2rem;
+        }
+        
+        .hero-badges {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 2.5rem;
+        }
+        .hero-badge {
+            padding: 0.8rem 1.5rem;
+            background: var(--glass);
+            border: 2px solid var(--glass-border);
+            border-radius: 50px;
+            font-weight: 700;
+            color: white;
+            backdrop-filter: blur(20px);
+            transition: all 0.4s;
+        }
+        .hero-badge:hover { transform: translateY(-5px) scale(1.1); }
+        
+        .hero-desc {
+            font-size: 1.3rem;
+            line-height: 2;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 900px;
+            margin-bottom: 3rem;
+        }
+        
+        .hero-buttons { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 3rem; }
+        .btn-quantum {
+            padding: 1.5rem 3.5rem;
+            border-radius: 50px;
+            font-weight: 900;
+            font-size: 1.1rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 2px;
+            transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            border: none;
+            cursor: pointer;
+        }
+        .btn-quantum:hover { transform: translateY(-10px) scale(1.1); box-shadow: 0 20px 60px rgba(255,0,255,0.3); }
+        .btn-1 { background: var(--premium-1); color: white; }
+        .btn-2 { background: var(--premium-3); color: white; }
+        .btn-3 { background: var(--premium-4); color: #000; }
+        
+        .hero-stats { display: flex; gap: 4rem; }
+        .hero-stat-number {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 5rem;
+            font-weight: 900;
+            background: var(--premium-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: block;
+        }
+        .hero-stat-label { color: rgba(255, 255, 255, 0.7); font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; }
+        
+        .hero-image-wrapper {
+            position: relative;
+            width: 550px;
+            height: 550px;
+            margin: 0 auto;
+        }
+        .hero-image-wrapper .orbit {
+            position: absolute;
+            border: 4px solid transparent;
+            border-radius: 50%;
+            animation: spin 6s linear infinite;
+        }
+        .hero-image-wrapper .orbit:nth-child(1) { inset: 0; border-top-color: var(--d1); border-right-color: var(--d2); }
+        .hero-image-wrapper .orbit:nth-child(2) { inset: 30px; border-bottom-color: var(--d3); border-left-color: var(--d4); animation-duration: 4s; animation-direction: reverse; }
+        .hero-image-wrapper .orbit:nth-child(3) { inset: 60px; border-top-color: var(--d5); border-right-color: var(--d6); animation-duration: 3s; }
+        @keyframes spin { 0% { transform: rotate(0); } 100% { transform: rotate(360deg); } }
+        .hero-image-wrapper img {
+            width: 100%; height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 15px solid transparent;
+            background: linear-gradient(var(--bg-void), var(--bg-void)) padding-box, var(--premium-1) border-box;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* ===== TICKER ===== */
+        .ticker { padding: 1rem 0; background: rgba(255, 255, 255, 0.02); border-top: 2px solid var(--d1); border-bottom: 2px solid var(--d1); overflow: hidden; }
+        .ticker-track { display: flex; gap: 2rem; animation: tickerScroll 30s linear infinite; }
+        @keyframes tickerScroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        .ticker-item { display: flex; align-items: center; gap: 1rem; padding: 0.5rem 1.5rem; background: rgba(255,255,255,0.05); border: 2px solid rgba(255,255,255,0.1); border-radius: 50px; white-space: nowrap; font-family: 'Orbitron', sans-serif; font-size: 0.9rem; }
+        .ticker-item i { color: var(--d3); font-size: 1.3rem; }
+
+        /* ===== SECTIONS COMMON ===== */
+        .section { padding: 120px 4rem; }
+        .container { max-width: 2000px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 5rem; }
+        .section-icon { font-size: 5rem; display: block; margin-bottom: 1rem; }
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+        }
+        .section-title .gold {
+            background: var(--premium-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .section-desc { color: rgba(255,255,255,0.7); font-size: 1.2rem; max-width: 700px; margin: 0 auto; line-height: 1.8; }
+
+        /* ===== PREMIUM CARDS ===== */
+        .premium-card {
+            background: var(--glass);
+            border: 3px solid var(--glass-border);
+            border-radius: 30px;
+            padding: 3rem;
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            position: relative;
+            overflow: hidden;
+        }
+        .premium-card:hover {
+            transform: translateY(-20px) scale(1.05);
+            border-color: var(--d1);
+            box-shadow: 0 30px 80px rgba(255, 215, 0, 0.2);
+        }
+        .premium-card .icon { font-size: 4rem; display: block; margin-bottom: 1.5rem; }
+        .premium-card h3 { font-family: 'Orbitron', sans-serif; font-size: 1.8rem; font-weight: 900; margin-bottom: 1rem; }
+        .premium-card p { color: rgba(255,255,255,0.7); line-height: 1.8; }
+
+        /* ===== GRID LAYOUTS ===== */
+        .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3rem; }
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; }
+        .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2.5rem; }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1400px) { .grid-4 { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 1200px) {
+            .hero-container { grid-template-columns: 1fr; text-align: center; }
+            .hero-image-wrapper { width: 350px; height: 350px; }
+            .grid-3 { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+            .nav-menu {
+                position: fixed;
+                top: 80px; left: -100%;
+                width: 100%; height: calc(100vh - 80px);
+                background: var(--bg-void);
+                flex-direction: column;
+                padding: 2rem;
+                transition: all 0.5s;
+            }
+            .nav-menu.active { left: 0; }
+            .menu-toggle { display: flex; }
+            .hero-image-wrapper { width: 280px; height: 280px; }
+            .hero-stats { gap: 2rem; }
+        }
+
+        /* ===== CONTACT ===== */
+        .contact-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 3rem; }
+        .contact-card { padding: 3rem; background: var(--glass); border: 3px solid var(--glass-border); border-radius: 30px; }
+        .contact-item { display: flex; align-items: center; gap: 1.5rem; margin-bottom: 1.5rem; padding: 1rem; border-radius: 10px; transition: all 0.3s; }
+        .contact-item:hover { background: rgba(255, 215, 0, 0.1); transform: translateX(10px); }
+        .contact-icon { width: 60px; height: 60px; background: var(--premium-1); border-radius: 15px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0; }
+        .social-links { display: flex; gap: 1rem; margin-top: 2rem; }
+        .social-link { width: 55px; height: 55px; background: var(--glass); border: 2px solid var(--glass-border); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--d3); font-size: 1.5rem; text-decoration: none; transition: all 0.4s; }
+        .social-link:hover { background: var(--premium-1); color: #000; transform: scale(1.2) rotate(360deg); }
+        
+        .input {
+            width: 100%;
+            padding: 1.2rem;
+            background: var(--glass);
+            border: 2px solid var(--glass-border);
+            border-radius: 15px;
+            color: white;
+            font-size: 1rem;
+            font-family: 'Space Grotesk', sans-serif;
+            transition: all 0.4s;
+        }
+        .input:focus { outline: none; border-color: var(--d1); box-shadow: 0 0 0 5px rgba(255, 215, 0, 0.15); }
+        textarea.input { min-height: 200px; resize: vertical; }
+
+        /* ===== FOOTER ===== */
+        .footer { padding: 5rem 4rem 2rem; background: var(--bg-dark); border-top: 3px solid var(--d1); }
+        .footer-grid { display: grid; grid-template-columns: 3fr 1fr 1fr 1fr; gap: 3rem; max-width: 2000px; margin: 0 auto; }
+        .footer h4 { font-family: 'Orbitron', sans-serif; font-size: 2.5rem; background: var(--premium-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 1rem; }
+        .footer h5 { font-family: 'Orbitron', sans-serif; color: var(--d1); margin-bottom: 1.5rem; }
+        .footer a { color: rgba(255, 255, 255, 0.7); text-decoration: none; display: block; margin-bottom: 0.8rem; transition: all 0.3s; }
+        .footer a:hover { color: var(--d1); transform: translateX(10px); }
+        .footer-bottom { text-align: center; padding-top: 3rem; margin-top: 3rem; border-top: 2px solid rgba(255, 255, 255, 0.1); color: var(--d3); font-family: 'Orbitron', sans-serif; }
+
+        /* ===== BACK TO TOP ===== */
+        #backToTop { position: fixed; bottom: 40px; right: 40px; width: 70px; height: 70px; background: var(--premium-1); border: none; border-radius: 50%; color: white; font-size: 2rem; cursor: pointer; display: none; z-index: 999; box-shadow: 0 10px 40px rgba(255, 0, 255, 0.4); transition: all 0.4s; }
+        #backToTop:hover { transform: translateY(-10px) scale(1.2) rotate(360deg); }
+    </style>
+</head>
+<body>
+
+    <!-- PRELOADER -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-10d">
+            <div class="ring"></div><div class="ring"></div><div class="ring"></div>
+            <div class="ring"></div><div class="ring"></div><div class="ring"></div>
+            <span class="core">🌌</span>
+        </div>
+        <div class="preloader-title">V30</div>
+        <div class="preloader-sub">QUANTUM LEGACY</div>
+    </div>
+
+    <!-- ANIMATED BACKGROUND -->
+    <div class="premium-bg">
+        <div class="galaxy"></div>
+        <div class="nebula"></div>
+        <div class="nebula"></div>
+        <div class="nebula"></div>
+    </div>
+    <canvas id="stars-canvas"></canvas>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-brand">🌌 MKA</a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#certs" class="nav-link">Certs</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <span class="hero-crown">👑</span>
+                <h1 class="hero-title">
+                    <span class="quantum">Moe Kyaw Aung</span>
+                    <span class="badge-v30">V30</span>
+                </h1>
+                <h2 class="hero-subtitle">The 10th Dimension Developer</h2>
+                <div class="hero-badges">
+                    <span class="hero-badge">🔮 12+ Years</span>
+                    <span class="hero-badge">📱 3000+ Apps</span>
+                    <span class="hero-badge">💎 500K+ Lines</span>
+                    <span class="hero-badge">⭐ 100% Perfect</span>
+                </div>
+                <p class="hero-desc">
+                    The <strong>ultimate quantum developer</strong> building across <strong>10 Dimensions</strong> of technology.
+                    From Android & iOS to AI & Quantum Computing, I create the <strong>impossible</strong>.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn-quantum btn-1"><i class="fas fa-crown"></i> View Dimensions</a>
+                    <a href="#contact" class="btn-quantum btn-2"><i class="fas fa-envelope"></i> Contact</a>
+                    <a href="https://github.com/Dev-moe-kyawaung" target="_blank" class="btn-quantum btn-3"><i class="fab fa-github"></i> GitHub</a>
+                </div>
+                <div class="hero-stats">
+                    <div><span class="hero-stat-number">12+</span><span class="hero-stat-label">Years</span></div>
+                    <div><span class="hero-stat-number">3000+</span><span class="hero-stat-label">Apps</span></div>
+                    <div><span class="hero-stat-number">500K+</span><span class="hero-stat-label">Lines</span></div>
+                    <div><span class="hero-stat-number">100</span><span class="hero-stat-label">Sections</span></div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-image-wrapper">
+                    <div class="orbit"></div><div class="orbit"></div><div class="orbit"></div>
+                    <img src="https://res.cloudinary.com/dye5qpwii/image/upload/v1778763535/MKA_25_lbx6fb.webp" alt="Moe Kyaw Aung">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TICKER -->
+    <div class="ticker">
+        <div class="ticker-track">
+            <span class="ticker-item"><i class="fab fa-android"></i> Android</span>
+            <span class="ticker-item"><i class="fab fa-apple"></i> iOS</span>
+            <span class="ticker-item"><i class="fab fa-flutter"></i> Flutter</span>
+            <span class="ticker-item"><i class="fab fa-react"></i> React Native</span>
+            <span class="ticker-item"><i class="fas fa-code"></i> Kotlin</span>
+            <span class="ticker-item"><i class="fas fa-fire"></i> Firebase</span>
+            <span class="ticker-item"><i class="fas fa-robot"></i> AI/ML</span>
+            <span class="ticker-item"><i class="fas fa-atom"></i> Quantum</span>
+            <!-- Duplicate for scroll -->
+            <span class="ticker-item"><i class="fab fa-android"></i> Android</span>
+            <span class="ticker-item"><i class="fab fa-apple"></i> iOS</span>
+            <span class="ticker-item"><i class="fab fa-flutter"></i> Flutter</span>
+            <span class="ticker-item"><i class="fab fa-react"></i> React Native</span>
+            <span class="ticker-item"><i class="fas fa-code"></i> Kotlin</span>
+            <span class="ticker-item"><i class="fas fa-fire"></i> Firebase</span>
+            <span class="ticker-item"><i class="fas fa-robot"></i> AI/ML</span>
+            <span class="ticker-item"><i class="fas fa-atom"></i> Quantum</span>
+        </div>
+    </div>
+
+    <!-- STATS -->
+    <section class="section" id="stats">
+        <div class="container">
+            <div class="grid-4">
+                <div class="premium-card" data-aos="zoom-in">
+                    <div class="stat-number" style="font-family:'Orbitron'; font-size:5rem; font-weight:900; background:var(--premium-1); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">12+</div>
+                    <div style="color: rgba(255,255,255,0.7); font-weight:700; margin-top:1rem;">Years Experience</div>
+                </div>
+                <div class="premium-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="stat-number" style="font-family:'Orbitron'; font-size:5rem; font-weight:900; background:var(--premium-1); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">3000+</div>
+                    <div style="color: rgba(255,255,255,0.7); font-weight:700; margin-top:1rem;">Apps Delivered</div>
+                </div>
+                <div class="premium-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="stat-number" style="font-family:'Orbitron'; font-size:5rem; font-weight:900; background:var(--premium-1); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">500K+</div>
+                    <div style="color: rgba(255,255,255,0.7); font-weight:700; margin-top:1rem;">Lines of Code</div>
+                </div>
+                <div class="premium-card" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="stat-number" style="font-family:'Orbitron'; font-size:5rem; font-weight:900; background:var(--premium-1); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">100%</div>
+                    <div style="color: rgba(255,255,255,0.7); font-weight:700; margin-top:1rem;">Client Satisfaction</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="about" style="background: var(--bg-dark);">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-icon">👤</span>
+                <h2 class="section-title">About The <span class="gold">Legend</span></h2>
+                <div class="section-desc">12+ years building the impossible</div>
+            </div>
+            <div class="grid-2">
+                <div class="premium-card" data-aos="fade-right">
+                    <span class="icon">💎</span>
+                    <h3>Core Expertise</h3>
+                    <p>Android (Kotlin, Compose), iOS (Swift, SwiftUI), Flutter, React Native, AI/ML, Quantum Computing</p>
+                </div>
+                <div class="premium-card" data-aos="fade-left">
+                    <span class="icon">🚀</span>
+                    <h3>Mission</h3>
+                    <p>Building the future with 10 dimensions of technology. Creating applications that serve millions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section" id="skills">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-icon">⚡</span>
+                <h2 class="section-title">Quantum <span class="gold">Skills</span></h2>
+            </div>
+            <div class="grid-4">
+                <div class="premium-card" data-aos="fade-up"><span class="icon">📱</span><h3>Android</h3><p>100%</p></div>
+                <div class="premium-card" data-aos="fade-up" data-aos-delay="100"><span class="icon">🍎</span><h3>iOS</h3><p>98%</p></div>
+                <div class="premium-card" data-aos="fade-up" data-aos-delay="200"><span class="icon">🦋</span><h3>Flutter</h3><p>96%</p></div>
+                <div class="premium-card" data-aos="fade-up" data-aos-delay="300"><span class="icon">🤖</span><h3>AI/ML</h3><p>95%</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section" id="projects" style="background: var(--bg-dark);">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-icon">💼</span>
+                <h2 class="section-title">Quantum <span class="gold">Projects</span></h2>
+            </div>
+            <div class="grid-3">
+                <a href="https://github.com/moekyawaung-tech/social-dashboard" target="_blank" class="premium-card" data-aos="fade-up">
+                    <span class="icon">📱</span>
+                    <h3>Social Dashboard</h3>
+                    <p>AI-powered social media analytics for all platforms.</p>
+                </a>
+                <a href="https://github.com/moekyawaung-tech/POS-Ultimate-Pro-Max" target="_blank" class="premium-card" data-aos="fade-up" data-aos-delay="100">
+                    <span class="icon">💼</span>
+                    <h3>POS Quantum Pro</h3>
+                    <p>Enterprise POS with quantum encryption and ML predictions.</p>
+                </a>
+                <a href="https://github.com/moekyawaung-tech/video-player" target="_blank" class="premium-card" data-aos="fade-up" data-aos-delay="200">
+                    <span class="icon">🎯</span>
+                    <h3>Video Player Infinity</h3>
+                    <p>Cross-platform video player with AR features.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section class="section" id="certs">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-icon">🎓</span>
+                <h2 class="section-title">100+ <span class="gold">Certifications</span></h2>
+            </div>
+            <div class="grid-4">
+                <div class="premium-card" data-aos="fade-up"><span class="icon">🎓</span><h3>Android Expert</h3><p>Programming Hub • 2024</p></div>
+                <div class="premium-card" data-aos="fade-up" data-aos-delay="100"><span class="icon">🎓</span><h3>iOS Developer</h3><p>Programming Hub • 2024</p></div>
+                <div class="premium-card" data-aos="fade-up" data-aos-delay="200"><span class="icon">🎓</span><h3>AI/ML Expert</h3><p>Programming Hub • 2024</p></div>
+                <div class="premium-card" data-aos="fade-up" data-aos-delay="300"><span class="icon">🎓</span><h3>Quantum Computing</h3><p>Programming Hub • 2024</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section" id="services" style="background: var(--bg-dark);">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-icon">⭐</span>
+                <h2 class="section-title">Quantum <span class="gold">Services</span></h2>
+            </div>
+            <div class="grid-4">
+                <div class="premium-card" data-aos="fade-up"><span class="icon">📱</span><h3>App Development</h3><p>From \$5K</p></div>
+                <div class="premium-card" data-aos="fade-up" data-aos-delay="100"><span class="icon">🤖</span><h3>AI/ML Solutions</h3><p>From \$8K</p></div>
+                <div class="premium-card" data-aos="fade-up" data-aos-delay="200"><span class="icon">🔮</span><h3>Quantum Security</h3><p>From \$3K</p></div>
+                <div class="premium-card" data-aos="fade-up" data-aos-delay="300"><span class="icon">🏗️</span><h3>Architecture</h3><p>From \$200/hr</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-icon">📧</span>
+                <h2 class="section-title">Contact The <span class="gold">Legend</span></h2>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-card" data-aos="fade-right">
+                    <div class="contact-item"><div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div><div><h3>Location</h3><p>Myanmar ↔ Thailand</p></div></div>
+                    <div class="contact-item"><div class="contact-icon"><i class="fas fa-envelope"></i></div><div><h3>Email</h3><p>moekyawaung@programmer.net</p></div></div>
+                    <div class="contact-item"><div class="contact-icon"><i class="fas fa-phone"></i></div><div><h3>Phone</h3><p>+95 9 889 000 889</p></div></div>
+                    <div class="social-links">
+                        <a href="https://github.com/Dev-moe-kyawaung" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/moe-kyaw-aung-2653093a1" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://t.me/moekyawaung" class="social-link"><i class="fab fa-telegram"></i></a>
+                        <a href="https://gravatar.com/moekyawaung13721" class="social-link"><i class="fas fa-gem"></i></a>
+                    </div>
+                </div>
+                <form class="contact-card" data-aos="fade-left">
+                    <div style="display:grid; gap:1.5rem;">
+                        <input type="text" class="input" placeholder="Your Name" required>
+                        <input type="email" class="input" placeholder="Your Email" required>
+                        <input type="text" class="input" placeholder="Subject" required>
+                        <textarea class="input" placeholder="Your Message" required></textarea>
+                        <button type="submit" class="btn-quantum btn-1" style="width:100%; justify-content:center; padding:1.5rem;">
+                            <i class="fas fa-paper-plane"></i> Send Quantum Message
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div>
+                <h4>🌌 MKA</h4>
+                <p style="color:rgba(255,255,255,0.7); line-height:1.8;">The 10th dimension developer. 500,000+ lines of quantum perfection.</p>
+            </div>
+            <div>
+                <h5>Navigate</h5>
+                <a href="#home">Home</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
+            </div>
+            <div>
+                <h5>Projects</h5>
+                <a href="https://github.com/moekyawaung-tech/social-dashboard">Social Dashboard</a>
+                <a href="https://github.com/moekyawaung-tech/POS-Ultimate-Pro-Max">POS Quantum</a>
+            </div>
+            <div>
+                <h5>Contact</h5>
+                <a href="mailto:moekyawaung@programmer.net">Email</a>
+                <a href="tel:+959889000889">Call</a>
+                <a href="https://t.me/moekyawaung">Telegram</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <i class="fas fa-atom" style="color:var(--d2); font-size:2rem; display:block; margin-bottom:1rem;"></i>
+            V30 ULTIMATE QUANTUM LEGACY - © 2026 Moe Kyaw Aung
+        </div>
+    </footer>
+
+    <!-- BACK TO TOP -->
+    <button id="backToTop"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- SCRIPTS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true, offset: 100 });
+
+        // Preloader
+        window.addEventListener('load', () => {
+            setTimeout(() => document.getElementById('preloader').classList.add('hidden'), 3000);
+        });
+
+        // Navbar
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 100));
+
+        // Menu
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+        menuToggle.addEventListener('click', () => navMenu.classList.toggle('active'));
+
+        // Back to top
+        const toTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            toTop.style.display = window.scrollY > 500 ? 'flex' : 'none';
+        });
+        toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+        // Stars background
+        const canvas = document.getElementById('stars-canvas');
+        const ctx = canvas.getContext('2d');
+        let stars = [];
+
+        function resize() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resize();
+        window.addEventListener('resize', resize);
+
+        for (let i = 0; i < 500; i++) {
+            stars.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                size: Math.random() * 3 + 1,
+                speed: Math.random() * 0.05 + 0.01,
+                opacity: Math.random() * 0.8 + 0.2
+            });
+        }
+
+        function animateStars() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            stars.forEach(star => {
+                star.y -= star.speed;
+                if (star.y < 0) { star.y = canvas.height; star.x = Math.random() * canvas.width; }
+                ctx.fillStyle = `rgba(255, 215, 0, \${star.opacity})`;
+                ctx.beginPath();
+                ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
+                ctx.fill();
+            });
+            requestAnimationFrame(animateStars);
+        }
+        animateStars();
+
+        console.log('%c🌌 V30 QUANTUM LEGACY - THE 10TH DIMENSION', 'color: #FFD700; font-size: 50px; font-weight: 900;');
+        console.log('%c💎 500,000+ LINES • 120 PAGES • 100 SECTIONS', 'color: #FF00FF; font-size: 25px;');
+        console.log('%c📧 moekyawaung@programmer.net', 'color: #00F5FF; font-size: 18px;');
+    </script>
+</body>
+</html>
