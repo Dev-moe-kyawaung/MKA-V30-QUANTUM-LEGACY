@@ -1,0 +1,12 @@
+# 🌌 V30 ULTIMATE QUANTUM LEGACY - GitLab CI/CD
+pages:
+  stage: deploy
+  script:
+    - mkdir .public
+    - cp -r * .public/
+    - mv .public public
+  artifacts:
+    paths:
+      - public
+  only:
+    - main
